@@ -37,6 +37,7 @@
     top: 0;
     height: auto;
     max-height: 100vh;
+    background-color:white;
 
     &.fixed-top {
         position: fixed;
@@ -57,24 +58,42 @@
     svg {
         overflow: visible;
     }
+
+
+    @include mq(mobile) {
+        padding-bottom:1px;
+    }
 }
 
 .scroll-text {
     position: absolute;
     top: 0;
-    pointer-events: none;
+    //margin-top: 10%;
+    //pointer-events: none;
+
+
+    @include mq(mobile) {
+        left: 0%;
+    }
+
+    @include mq(desktop) {
+        left: 50%;
+    }
 }
 
 .scroll-text__div {
-    max-width: 620px;
+    max-width: 320px;
     width: 100%;
     @include mq(desktop) {
-        width: 620px;
+        width: 320px;
     }
-    margin-left: 0px;
-    background-color: #fff;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0 0 #767676;
+    margin-left: 0%;
+
+    background-color:rgba(255,255,255,0.8) !important;
+
+    //background-color: #fff;
+    //border: 2px solid #000;
+    //box-shadow: 4px 4px 0 0 #767676;
     padding: 6px 10px 0px;
     @include fs-headline(5);
     font-size: 20px;

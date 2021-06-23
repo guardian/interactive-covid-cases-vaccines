@@ -1,0 +1,182 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+#interactive-slot-1, #interactive-slot-2, #interactive-slot-3, #interactive-slot-4{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    width: 100%;
+
+	svg{
+		overflow: visible;
+	}
+
+}
+
+ #interactive-slot-3{
+    margin-bottom: 20px !important;
+ }
+
+.country-div{
+    margin-right: 12px;
+    width: 82px;
+
+    @include mq($from: 100px, $until: 620px){
+        margin-right: 8px;
+    }
+}
+
+.country-div-header{
+    @include fs-headline(2);
+    font-size: 14px;
+    //text-overflow: ellipsis;
+    //overflow: hidden; 
+    width: 100%; 
+    height: 1.8em; 
+    //white-space: nowrap;
+    margin-bottom: 8px;
+}
+
+.label-text-rate{
+    @include fs-textSans(1);
+    font-weight: 900;
+    font-size: 12px;
+    fill:#707070;
+}
+
+.label-text-week{
+    @include fs-textSans(1);
+    font-size: 12px;
+    fill:#707070;
+}
+
+.yaxis text, .xaxis text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Guardian Text Egyptian Web",Georgia,serif;
+    fill: #767676;
+}
+
+.yaxis line{
+    stroke-width: 2px;
+    stroke: #bababa;
+    stroke-dasharray: 0,4;
+    stroke-linecap: round;
+}
+
+.xaxis line{
+    stroke-width: 2px;
+    stroke: #bababa;
+}
+
+.xaxis .tick:last-child{
+    text{
+        text-anchor:end;
+    }
+}
+
+.yaxis .tick{
+     text-anchor:start;
+     x:0;
+
+     text{
+        y:-10px;
+     };
+}
+
+.country-div div{
+    margin-bottom: 5px;
+}
+
+.axis{
+    stroke:#dadada !important;
+    stroke-width:0.5px;
+}
+
+.spans{
+    margin:0;
+}
+
+.high-deaths-area{
+    fill:#c70000;
+    opacity:.2;
+}
+
+.low-deaths-area{
+    fill:$green-dark;
+    opacity:.2;
+}
+
+.high-deaths-circle{
+    fill:#c70000;
+}
+
+.low-deaths-circle{
+    fill:$green-dark;
+}
+
+.high-deaths-path{
+    stroke:#c70000;
+    stroke-width:0.1em;
+    fill:none;
+}
+
+.low-deaths-path{
+    stroke:$green-dark;
+    stroke-width:0.1em;
+    fill:none;
+}
+
+.sm-legend{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    h2{
+        @include fs-textSans(1);
+        font-weight: 900;
+    }
+
+    .sm-text{
+        @include fs-textSans(1);
+    }
+
+    .color-bundle{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .sm-color{
+        width: 50px;
+        height: 5px;
+
+        &.green
+        {
+            background-color:$green-dark;
+            margin-left: 5px;
+        }
+        &.red
+        {
+            background-color:#c70000;
+            margin-right: 5px;
+        }
+        
+    }
+
+    .sm-color-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+}
+
+
