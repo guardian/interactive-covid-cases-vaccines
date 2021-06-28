@@ -52,7 +52,7 @@ codes.forEach(code => {
 
 const meanDeaths = 1 //d3.mean(lastDeaths)
 
-console.log('**', meanDeaths)
+//console.log('**', meanDeaths)
 
 const maxVaccines = d3.max(lastVaccines)
 const meanVaccines = d3.mean(lastVaccines)
@@ -93,7 +93,7 @@ const makeCharts = (slot, data, i) => {
 	.style('flex-direction', 'column')
 	.style('transform', i == 0 ? `translate(0px, ${posY}px)` : `translate(${posX}px, ${posY}px)`)
 
-	console.log(i)
+	//console.log(i)
 
 	let spans = label.append('div')
 	.attr('class', 'spans')
@@ -138,6 +138,7 @@ const getCountryName = (name) => {
 	if(name === 'United Arab Emirates') name = 'UAE'
 	if(name === 'United Kingdom') name = 'UK'
 	if(name === 'United States') name = 'US'
+	if(name === 'Czechia') name = 'Czech Republic'
 
 	return name
 }
@@ -175,6 +176,14 @@ highRateCountries.forEach((country,i) => {
 		makeCharts('interactive-slot-1', country, cont)
 
 		cont ++
+
+		let low = lowIncomes.find(f => f.code === country[0].iso_code)
+		let lowM = lowMiddleIncomes.find(f => f.code === country[0].iso_code)
+
+		console.log(low, lowM)
+
+
+		//if(country.lowIncomes || lowMiddleIncomes)
 
 	}
 })
